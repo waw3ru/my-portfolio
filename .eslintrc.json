@@ -1,0 +1,42 @@
+{
+  "root": true,
+  "extends": [
+    "plugin:vue3-strongly-recommended",
+    "plugin:nuxt/recommended",
+    "@vue/typescript/recommended",
+    "plugin:prettier-vue/recommended",
+    "prettier"
+  ],
+  "rules": {
+    "vue/multi-word-component-names": false,
+    "prettier/prettier": [
+      "warn",
+      {
+        "singleQuote": false,
+        "trailingComma": "es5",
+        "tabWidth": 2,
+        "bracketSpacing": true,
+        "arrowParens": "always",
+        "printWidth": 80,
+        "endOfLine": "auto"
+      }
+    ],
+    "prettier-vue/prettier": [
+      "warn",
+      {
+        "printWidth": 80,
+        "singleQuote": false,
+        "semi": true,
+        "trailingComma": "es5",
+        "tabWidth": 2,
+        "endOfLine": "auto",
+        "bracketSpacing": true
+      }
+    ]
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2021": true
+  }
+}

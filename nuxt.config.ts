@@ -15,5 +15,6 @@ export default defineNuxtConfig({
     shim: false,
     strict: true,
   },
+  css: ["@/scss/main.scss"],
   app: _app,
 });

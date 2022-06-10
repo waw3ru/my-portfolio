@@ -1,4 +1,4 @@
-# My personal website
+# My personal portfolio website
 
 Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 
@@ -7,7 +7,7 @@ Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 Make sure to install the dependencies:
 
 ```bash
-pnpm install --shamefully-hoist
+yarn install
 ```
 
 ## Development Server
@@ -15,7 +15,7 @@ pnpm install --shamefully-hoist
 Start the development server on http://localhost:3000
 
 ```bash
-pnpm run dev
+yarn dev
 ```
 
 ## Production
@@ -23,13 +23,13 @@ pnpm run dev
 Build the application for production:
 
 ```bash
-pnpm run build
+yarn build
 ```
 
 Locally preview production build:
 
 ```bash
-pnpm run preview
+yarn preview
 ```
 
 Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.

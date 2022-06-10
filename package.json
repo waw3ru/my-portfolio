@@ -1,16 +1,26 @@
 {
+  "name": "waw3ru-portfolio",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
+    "build": "NODE_ENV=production nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview"
   },
   "devDependencies": {
+    "@types/node": "17.0.41",
+    "@typescript-eslint/eslint-plugin": "4.18.0",
+    "@typescript-eslint/parser": "4.18.0",
+    "eslint": "8.17.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-nuxt": "3.2.0",
+    "eslint-plugin-prettier-vue": "4.1.0",
+    "eslint-plugin-vue": "9.1.0",
     "nuxt": "3.0.0-rc.3",
-    "prettier": "2.6.2"
+    "prettier": "2.6.2",
+    "sass": "1.52.3"
   },
   "dependencies": {
-    "typed.js": "^2.0.12"
+    "typed.js": "2.0.12"
   }
 }
