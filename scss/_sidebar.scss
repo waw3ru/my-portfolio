@@ -1,0 +1,236 @@
+@use "sass:math";
+
+#sidebar__container {
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: all 600ms;
+  background-color: #fff;
+
+  @media screen and (min-width: 992px) {
+    height: 100% !important;
+    right: 0px;
+    overflow: hidden;
+  }
+
+  &::after {
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    position: absolute;
+    background-size: 11px;
+    background-repeat: repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-image: url("/dot.png");
+  }
+}
+
+#sidebar__container .sidebar__bg {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  display: none;
+  transition: all 0.6s ease 0s;
+
+  @media (min-width: 1200px) {
+    display: block;
+  }
+}
+
+#sidebar__container .sidebar__bg .sidebar__lines {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  .sidebar__line {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background-color: rgba(241, 175, 15, math.div(75, 100));
+    transition: opacity 0.6s ease 0s;
+
+    &:nth-child(1) {
+      left: 25%;
+    }
+    &:nth-child(2) {
+      left: 50%;
+      animation-delay: 3s;
+    }
+    &:nth-child(3) {
+      left: 75%;
+      animation-delay: 6s;
+    }
+  }
+
+  .sidebar__line-dot {
+    position: absolute;
+    top: -20px;
+    width: 9px;
+    height: 9px;
+    margin-left: -4px;
+    border-radius: 50%;
+    animation: 5s ease-in-out 0s infinite alternate none running line-anim;
+    transition: opacity 0.6s ease 0s;
+    background-color: rgb(241, 175, 15);
+
+    &:nth-child(4) {
+      left: 25%;
+    }
+    &:nth-child(5) {
+      left: 50%;
+      animation-delay: 3s;
+    }
+    &:nth-child(6) {
+      left: 75%;
+      animation-delay: 6s;
+    }
+  }
+}
+
+#sidebar__container .sidebar__bg .sidebar__partial {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(255, 255, 255);
+  transition: all 0.6s ease 0s;
+
+  &-border-line {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border-color: rgb(47, 53, 66);
+    transition: all 0.6s ease 0s;
+  }
+
+  &-border-line:nth-child(1) {
+    right: 30px;
+    top: 30px;
+    border-right-width: 3px;
+    border-right-style: solid;
+    border-top-width: 3px;
+    border-top-style: solid;
+  }
+
+  &-border-line:nth-child(2) {
+    bottom: 30px;
+    left: 30px;
+    border-left-width: 3px;
+    border-left-style: solid;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+  }
+
+  &-border-line:nth-child(3) {
+    left: 30px;
+    top: 30px;
+    border-left-width: 3px;
+    border-left-style: solid;
+    border-top-width: 3px;
+    border-top-style: solid;
+  }
+
+  &-border-line:nth-child(4) {
+    right: 30px;
+    bottom: 30px;
+    border-right-width: 3px;
+    border-right-style: solid;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+  }
+}
+
+#sidebar__container .sidebar__content {
+  @media screen and (min-width: 992px) {
+    position: absolute;
+    width: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.6s ease 0s;
+  }
+
+  @media (max-width: 991px) {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    padding-top: 50px;
+    padding-bottom: 20px;
+  }
+
+  &-profile-pic {
+    width: 140px;
+    height: 160px;
+    margin: 0px auto;
+    border-radius: 50%;
+
+    img {
+      width: 140px;
+      max-height: 100%;
+      background-color: rgb(255, 255, 255);
+      border-width: 1px;
+      border-style: solid;
+      border-color: rgba(0, 0, 0, math.div(16, 100));
+      border-image: initial;
+      border-radius: 5%;
+      padding: 5px;
+    }
+  }
+
+  &-profile-name {
+    margin-top: 15px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  &-profile-social {
+    margin-top: 15px;
+    transition: all 0.3s ease-in-out 0s;
+
+    a {
+      display: inline-block;
+      margin-left: 14px;
+      font-size: 14px;
+      color: rgb(40, 40, 40);
+
+      &:first-of-type {
+        margin-left: 0px;
+      }
+    }
+  }
+
+  &-menu .menu {
+    margin: 0px;
+    padding-left: 0px;
+    list-style: none;
+
+    a {
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: 600;
+      color: rgb(102, 102, 102);
+      transform: scale(1);
+      letter-spacing: 0.7px;
+      -webkit-text-stroke: 0px;
+      margin: 3px;
+    }
+
+    a:hover,
+    a.active {
+      color: rgb(241, 175, 15);
+    }
+  }
+}

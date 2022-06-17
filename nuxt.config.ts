@@ -15,6 +15,6 @@ export default defineNuxtConfig({
     shim: false,
     strict: true,
   },
-  css: ["@/scss/main.scss"],
+  css: ["@/scss/main.scss", "@/scss/font-awesome-4.7.0/scss/font-awesome.scss"],
   app: _app,
 });
